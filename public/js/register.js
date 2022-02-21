@@ -14,11 +14,9 @@ registerForm.onsubmit = async event => {
 		let response = await request('/auth/register', 'POST', formData)
 		// console.log(response);
 
-		if(response.token) {
-			window.localStorage.setItem('token', response.token)
-			window.localStorage.setItem('userId', response.user.userId)
-			window.location = '/'
-		}
+		window.localStorage.setItem('token', response.token)
+		window.localStorage.setItem('userId', response.user.userId)
+		window.location = '/'
 
 		usernameInput.value = null
 		passwordInput.value = null
