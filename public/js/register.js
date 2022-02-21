@@ -12,17 +12,19 @@ registerForm.onsubmit = async event => {
 		formData.append('file', uploadInput.files[0])
 
 		let response = await request('/auth/register', 'POST', formData)
-		console.log(response);
+		// console.log(response);
 
-		window.localStorage.setItem('token', response.token)
-		window.localStorage.setItem('userId', response.user.userId)
-		window.location = '/'
+		if(response.token) {
+			window.localStorage.setItem('token', response.token)
+			window.localStorage.setItem('userId', response.user.userId)
+			window.location = '/'
+		}
 
 		usernameInput.value = null
 		passwordInput.value = null
 	} catch (error) {
-		messageText.textContent = error.message
-        messageText.style.color = 'red'
+		errorMessage.textContent = error.message
+        errorMessage.style.color = 'red'
 	}
 }
 

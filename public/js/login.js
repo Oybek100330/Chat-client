@@ -3,25 +3,28 @@
 
 console.log('error');
 loginForm.onsubmit = async event => {
-	event.preventDefault()
-
-	let user = {
-		username: usernameInput.value,
-		password: passwordInput.value
+	try{
+		event.preventDefault()
+	
+		let user = {
+			username: usernameInput.value,
+			password: passwordInput.value
+		}
+	
+		let response = await request('/auth/login', 'POST', user)
+	
+		if(response.token) {
+			window.localStorage.setItem('token', response.token)
+			window.localStorage.setItem('userId', response.user.userId)
+			window.location = '/'
+		}
+	
+		usernameInput.value = null
+		passwordInput.value = null
+	} catch(error){
+		errorMessage.textContent = error.message
+        errorMessage.style.color = 'red'
 	}
-	console.log(usernameInput.value);
-	console.log(passwordInput.value);
-
-	let response = await request('/auth/login', 'POST', user)
-
-	if(response.token) {
-		window.localStorage.setItem('token', response.token)
-		window.localStorage.setItem('userId', response.user.userId)
-		window.location = '/'
-	}
-
-	usernameInput.value = null
-	passwordInput.value = null
 }
 
 // showButton.onclick = () => {
