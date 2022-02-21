@@ -12,7 +12,7 @@ registerForm.onsubmit = async event => {
 		formData.append('file', uploadInput.files[0])
 
 		let response = await request('/auth/register', 'POST', formData)
-		// console.log(response);
+		console.log(response);
 
 		window.localStorage.setItem('token', response.token)
 		window.localStorage.setItem('userId', response.user.userId)
