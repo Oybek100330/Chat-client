@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
     <!--  All snippets are MIT license http://bootdey.com/license -->
-    <title>Bootstrap Login Form in modal - Bootdey.com</title>
+    <title>Register in kokogram</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +19,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="text-center">Sign Up</h1>
-                    <span id="errorMessage">Wrong username or password!</span>
+                    <span id="errorMessage"></span>
                 </div>
                 <div class="modal-body">
                     <form class="form col-md-12 center-block">
@@ -34,7 +34,7 @@
                             <input id="passwordInput" type="password" class="form-control input-lg" placeholder="Password">
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-primary btn-lg btn-block">Sign Up</button>
+                            <button id="registerButton" class="btn btn-primary btn-lg btn-block">Sign Up</button>
                             <span class="pull-right"><a href="login">Sign in</a></span>
                         </div>
                     </form>
@@ -45,7 +45,8 @@
     </div>
 </form>
 
-
+<script src="/js/utils.js"></script>
+<script src="/js/login.js"></script>
 <script type="text/javascript">
 
 </script>

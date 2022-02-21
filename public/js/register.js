@@ -1,5 +1,5 @@
-const token = window.localStorage.getItem('token')
-if(token) window.location = '/'
+// const token = window.localStorage.getItem('token')
+// if(token) window.location = '/'
 
 registerForm.onsubmit = async event => {
 	try {
