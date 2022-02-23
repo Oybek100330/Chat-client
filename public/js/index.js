@@ -142,6 +142,7 @@ async function renderMessages(id){
             messageText: inputMessage.value
         }
         let response = await request('/messages', 'POST', newMessage)
+        inputMessage.value = null
         // console.log(response);
         
     }
